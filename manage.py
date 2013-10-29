@@ -12,5 +12,12 @@ manage.add_command('runserver', Server(
     host='0.0.0.0'
 ))
 
+def register_blueprints(app):
+    # Prevents circular imports
+    from withdb.views import posts
+    app.register_blueprint(posts)
+
+register_blueprints(app)
+
 if __name__ == '__main__':
     manage.run()
