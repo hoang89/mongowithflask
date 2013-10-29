@@ -9,7 +9,8 @@ manage = Manager(app)
 manage.add_command('runserver', Server(
     use_debugger=True,
     use_reloader=True,
-    host='0.0.0.0'
+    host='0.0.0.0',
+    port=80
 ))
 
 def register_blueprints(app):
